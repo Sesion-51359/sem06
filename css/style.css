@@ -1,0 +1,41 @@
+.alerta-5 {
+  font-size: 22px;
+  background-color: #248000;
+  color: #e6e6e6;
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+  border: 2px solid black;
+}
+.alerta-4 {
+  font-size: 20px;
+  background-color: #2b9900;
+  color: #e6e6e6;
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+}
+.alerta-3 {
+  font-size: 18px;
+  background-color: #32b300;
+  color: #e6e6e6;
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+}
+.alerta-2 {
+  font-size: 16px;
+  background-color: #3acc00;
+  color: #e6e6e6;
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+}
+.alerta-1 {
+  font-size: 14px;
+  background-color: #41e600;
+  color: #e6e6e6;
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+}

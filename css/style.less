@@ -1,0 +1,23 @@
+@color-base: #gray;
+@fuente-base: 12px;
+@acento: #fff;
+
+.generarAlertas(@n) when (@n > 0) {
+    .alerta-@{n} {
+
+        font-size: @fuente-base + (@n * 2); 
+        background-color: darken(rgb(72, 255, 0), (@n * 5%));   
+        color: darken(@acento, 10%);
+        margin: 10px;
+        padding: 5px;
+        text-align: center;
+        & when (@n = 5) {
+            border: 2px solid black;
+        }
+    }
+    
+    .generarAlertas(@n - 1);
+}
+
+.generarAlertas(5);
+
