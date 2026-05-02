@@ -1,0 +1,21 @@
+@color-base: #3498db;
+@font-color: #59f57b;
+@font-size-base: 16px;
+@padding: 5px;
+@margin: 5px;
+
+
+
+.generate-alertas(@n, @i: 1) when (@i =< @n) {
+    .alerta-@{i} {
+        background-color: darken(@color-base, 8% * @i);
+        font-size: @font-size-base + (@i * 4px);
+        padding: @padding * @i;
+        // margin: @margin * @i;
+        color: @font-color;
+    }
+    .generate-alertas(@n, (@i + 1));
+}
+
+.generate-alertas(5);
+
