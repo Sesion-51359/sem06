@@ -1,0 +1,17 @@
+@levels: 5;
+@base-font: 14px;
+@base-color: #cce5ff;
+
+.generate-alerts(@i) when (@i > 0) {
+  .generate-alerts(@i - 1);
+
+  .alert-@{i} {
+    font-size: @base-font + (@i * 2);
+    background-color: darken(@base-color, @i * 8%);
+    padding: 10px;
+    margin: 5px 0;
+    color: #000;
+  }
+}
+
+.generate-alerts(@levels);
