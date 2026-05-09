@@ -1,0 +1,60 @@
+.cont button {
+  border-radius: 10px;
+}
+.cont button:nth-child(1) {
+  font-size: 1rem;
+  color: #cc0000;
+  background-color: rgb(36.4360189573, 211.5639810427, 153.971563981);
+}
+.cont button:nth-child(2) {
+  font-size: 1.5rem;
+  color: #990000;
+  background-color: rgb(28.9431279621, 168.0568720379, 122.308056872);
+}
+.cont button:nth-child(3) {
+  font-size: 2rem;
+  color: #660000;
+  background-color: rgb(21.4502369668, 124.5497630332, 90.644549763);
+}
+.cont button:nth-child(4) {
+  font-size: 2.5rem;
+  color: #330000;
+  background-color: rgb(13.9573459716, 81.0426540284, 58.981042654);
+}
+
+.color-decide div {
+  padding: 1rem;
+}
+.color-decide div:nth-child(1) {
+  background-color: rgba(17, 26, 131, 0.267);
+  color: #ffffff;
+}
+.color-decide div:nth-child(2) {
+  background-color: rgb(148, 202, 247);
+  color: #000000;
+}
+
+.container {
+  background-color: rgb(70, 189, 189);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.container h1 {
+  color: red;
+  font-family: monospace;
+  font-size: 3rem;
+}
+.container h2 {
+  color: rgb(75, 224, 175);
+}
+.container h3 {
+  color: yellow;
+  background-color: green;
+}
+.container h3:hover {
+  color: purple;
+}/*# sourceMappingURL=estilos.css.map */

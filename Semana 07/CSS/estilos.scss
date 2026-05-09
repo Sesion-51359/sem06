@@ -1,0 +1,135 @@
+$bg-color: rgb(70, 189, 189);
+
+$padd-base: 1rem;
+$margin-base: 1rem;
+$bordering: 10px;
+
+$primary-color: red;
+$secondary-color: rgb(75, 224, 175);
+$third-color: yellow;
+
+$font-size: 3rem;
+$font-base: monospace;
+
+$button-font-size: 0.5rem;
+
+
+
+.cont {
+    button {
+        border-radius: $bordering;
+
+        @for $i from 1 through 4 {
+
+            // .botton-#{$i} { 
+            //     font-size: $font-size + ($i * 2);
+            // }
+            &:nth-child(#{$i}) {
+                font-size: $button-font-size + ($i * 0.5);
+                color: darken($color: $primary-color, $amount: (
+                        $i * 10)
+                );
+            background-color: darken($color: $secondary-color, $amount: (
+                    $i * 10)
+            );
+    }
+}
+}
+
+}
+
+
+@function smart-contrast($color) {
+    // Extraemos componentes
+    $red: red($color);
+    $green: green($color);
+    $blue: blue($color);
+    
+    // Fórmula de luminancia
+    $yiq: (($red * 299) + ($green * 587) + ($blue * 114)) / 1000;
+    
+    @if ($yiq >= 128) {
+        @return #000000;
+    } @else {
+        @return #ffffff;
+    }
+}
+
+@function contrast-color($color) {
+    @if (lightness($color) > 50) {
+        @return #000000; // Fondo claro, texto negro
+    }
+
+    @else {
+        @return #ffffff; // Fondo oscuro, texto blanco
+    }
+}
+
+$dark-bg: rgba(17, 26, 131, 0.267);
+$light-bg: rgb(148, 202, 247);
+
+.color-decide {
+    div {
+        padding: $padd-base;
+
+        &:nth-child(1) {
+            background-color: $dark-bg;
+            color: contrast-color($dark-bg);
+            // color: smart-contrast($dark-bg);
+        }
+
+        &:nth-child(2) {
+            background-color: $light-bg;
+            color: contrast-color($light-bg);
+            // color: smart-contrast($light-bg);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.container {
+
+    background-color: $bg-color;
+
+    padding: $padd-base;
+    margin: $margin-base;
+    border-radius: $bordering;
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+
+    h1 {
+        color: $primary-color;
+        font-family: $font-base;
+        font-size: $font-size;
+    }
+
+    h2 {
+        color: $secondary-color;
+    }
+
+    h3 {
+        color: $third-color;
+        background-color: green;
+        // align-self: flex-start;
+
+        &:hover {
+            color: purple;
+        }
+    }
+
+
+
+
+
+}
