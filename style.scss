@@ -1,6 +1,7 @@
 $color-base: skyblue;
 $base-font-size: 12px;
 
+
 @function calcular-escala($iteracion){
     @return $base-font-size + ($iteracion * 4px);
 }
