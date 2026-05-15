@@ -1,0 +1,13 @@
+$color-base: skyblue;
+$base-font-size: 12px;
+
+@function calcular-escala($iteracion){
+    @return $base-font-size + ($iteracion * 4px);
+}
+
+@for $i from 1 through 4{
+    .btn-#{$i}{
+        background-color: $color-base;
+        font-size: calcular-escala($i);
+    }
+}
