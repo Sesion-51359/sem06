@@ -1,0 +1,234 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+$padd-base: 1rem;
+$margin-base: 1rem;
+$bordering: 10px;
+
+$primary-color: red;
+$secondary-color: rgb(75, 224, 175);
+$third-color: yellow;
+
+$font-size: 3rem;
+$font-base: monospace;
+
+.container {
+    padding: $padd-base;
+    margin: $margin-base;
+    display: flex;
+}
+
+.item {
+    padding: $padd-base / 2;
+    margin: $margin-base / 2;
+    border-radius: $bordering;
+    gap: 15px;
+}
+
+.item2 {
+    padding: $padd-base / 2;
+    display: block;
+    text-align: center;
+    align-content: center;
+    font-size: 1.5rem;
+    height: 70px;
+    width: 25%;
+    margin: 0px;
+    border-radius: 0px;
+    color: white;
+    background-color: black;
+}
+
+$colores: red, blue, green, purple, pink, yellow, brown, lightblue;
+
+.t {
+    @extend .item;
+
+    @for $i from 1 through 8 {
+
+        &:nth-child(#{$i}) {
+            width: 100px;
+            height: 100px;
+            background-color: nth($colores, $i);
+
+            transition: all 2s;
+            // transition-delay: .2s;
+
+        }
+    }
+}
+.t:hover {
+    width: 2000px;
+
+    transform: rotate(90deg);
+}
+
+
+.container2 {
+    @extend .container;
+    // width: 100%;
+
+    @for $i from 1 through 4 {
+        navbar:nth-child(#{$i}) {
+            @extend .item2;
+            // border-color: nth($colores, $i);
+            // border-style: solid;
+            // display: inline-block;
+            // position: relative;
+            $color-actual: nth($colores, $i);
+            background-image: linear-gradient($color-actual, $color-actual);
+
+            background-repeat: no-repeat;
+            background-position: top left; 
+            background-size: 100% 6px;
+
+            transition: background-size 0.3s ease, color 0.3s ease;
+
+            &:hover {
+                color: white;
+                background-size: 100% 100%;
+            }
+        }
+    }
+}
+
+
+.container3{
+    @extend .container;
+
+    flex-direction: column;
+
+    @for $i from 1 through 4{
+
+        div:nth-child(#{$i}) {
+            @extend .item;
+            width: 30%;
+            padding: $padd-base + 0.4rem;
+    
+            background-color: nth($colores, $i);
+            transition: all 3s ease;
+
+            &:hover {
+                // transform: translate(200px, 200px);
+                // transform: translateX(-200px);
+                // transform: translateY(200px);
+                // background-color: blue;
+
+            }
+        }
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+// .container2 {
+//     @extend .container;
+//     // width: 100%;
+
+//     @for $i from 1 through 4 {
+//         navbar:nth-child(#{$i}) {
+//             @extend .item2;
+//             // border-color: nth($colores, $i);
+//             // border-style: solid;
+//             // display: inline-block;
+//             position: relative;
+
+//             // border: none;
+
+//             // border-top-style: solid;
+//             // border-top-width: 6px;
+//             // border-top-color: nth($colores, $i);
+
+//             transition: color 0.3s ease;
+
+//             &::before {
+//                 content: '';
+//                 position: absolute;
+//                 top: 0;
+//                 left: 0;
+//                 width: 100%;
+//                 height: 6px;
+//                 z-index: -1;
+//                 transition: height 0.3s ease;
+//             }
+
+//             &:hover {
+//                 color: white;
+//                 /* El texto cambia a blanco para que se lea bien */
+
+//                 &::before {
+//                     height: 100%;
+//                     /* ¡Baja el color por completo! */
+//                 }
+//             }
+
+//             &::before {
+//                 background-color: nth($colores, $i);
+//             }
+
+//         }
+//     }
+// }
+
+
+// .container2 {
+//     @extend .container;
+
+//     navbar {
+//         display: inline-block;
+//         padding: 15px 25px;
+//         position: relative;
+//         /* ¡Súper importante! Para que el fondo no se salga del botón */
+//         overflow: hidden;
+//         /* Esconde el color cuando esté arriba */
+//         color: #333;
+//         /* Color del texto inicial */
+//         cursor: pointer;
+
+//         // Configuramos la transición para el cambio de color del texto
+//         transition: color 0.3s ease;
+
+//         &::before {
+//             content: '';
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             width: 100%;
+//             height: 6px;
+//             z-index: -1;
+//             /* Lo mandamos detrás del texto para que no lo tape */
+
+//             // Aquí está el truco: animamos la altura (height) y el fondo
+//             transition: height 0.3s ease;
+//         }
+
+//         &:hover {
+//             color: white;
+
+//             &::before {
+//                 height: 100%;
+//                 /* ¡Baja el color por completo! */
+//             }
+//         }
+//     }
+
+//     @for $i from 1 through 4 {
+//         navbar:nth-child(#{$i}) {
+//             &::before {
+//                 background-color: nth($colores, $i);
+//             }
+//         }
+//     }
+// }

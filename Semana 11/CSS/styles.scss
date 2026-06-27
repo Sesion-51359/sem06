@@ -1,0 +1,90 @@
+$color-principal: red;
+$color-fondo: rgb(134, 207, 134);
+$w-ball: 50px;
+$h-ball: 50px;
+$br-ball: 50%;
+
+
+body {
+    background-color: $color-fondo;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100dvh;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+}
+
+section {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        // transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+    }
+
+    50% {
+        // transform: translateY(-100px);
+        -webkit-transform: translateY(-100px);
+        -ms-transform: translateY(-300px);
+    }
+}
+
+
+.ball {
+    width: $w-ball;
+    height: $h-ball;
+    background-color: $color-principal;
+    border-radius: $br-ball;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    @supports (transform: translateY(0)) or (-webkit-transform: translateY(0)) or (-ms-transform: translateY(0)) {
+        animation: bounce 1s infinite ease-in-out
+    }
+}
+
+
+
+$primary-gradient: linear-gradient(to right, rgb(125, 125, 219), rgb(196, 196, 108));
+$legacy-gradient: linear-gradient(to left, rgb(116, 235, 122), rgb(223, 104, 213));
+
+.contenedor {
+
+    display: flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    gap: 15px;
+    
+    
+
+
+
+    
+    // display: flex;
+
+    @supports (background: $primary-gradient) {
+        background: $primary-gradient;
+    }
+
+}
+
+
+.item {
+    width: 100px;
+    background: $legacy-gradient;
+    padding: 15px;
+    // margin: 20px;
+
+}
