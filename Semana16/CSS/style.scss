@@ -1,0 +1,196 @@
+$color-error-container: #ffe9e9;
+$color-on-error-container: #410002;
+$color-error-outline: #ffb4ab;
+
+$shadow-level-1: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+
+$shadow-level-3: 0 6px 3px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12);
+
+$font-family-base: system-ui, -apple-system, sans-serif;
+$transition-default: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+
+.service-card {
+    width: 320px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px auto;
+    text-align: center;
+    font-family: $font-family-base;
+    box-shadow: $shadow-level-1;
+    transition: $transition-default;
+
+    &:hover {
+        box-shadow: $shadow-level-3;
+        transform: translateY(-8px);
+    }
+
+    h3 {
+        margin-top: 0;
+        color: #333333;
+    }
+
+    p {
+        color: #666666;
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+}
+
+
+.alert-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: $font-family-base;
+    font-size: 0.95rem;
+    line-height: 1.5;
+
+    background-color: $color-error-container;
+    color: $color-on-error-container;
+    border: 1px solid $color-error-outline;
+
+    .alert-icon {
+        font-size: 1.25rem;
+        line-height: 1;
+        user-select: none;
+    }
+
+    .alert-content {
+        flex: 1;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .alert-close-btn {
+        background: none;
+        border: none;
+        color: $color-on-error-container;
+        font-size: 1.5rem;
+        line-height: 1;
+        cursor: pointer;
+        padding: 0 4px;
+        margin-top: -2px;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+
+        &:focus-visible {
+            outline: 2px solid $color-on-error-container;
+            outline-offset: 2px;
+        }
+
+        &:hover {
+            background-color: rgba($color-on-error-container, 0.08); // Uso de función nativa de color en Sass
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+$color-tonal-container: #e8def8;
+$color-on-tonal-container: #1d192b;
+$border-radius-button: 100px;
+$box-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+
+
+.cont {
+    // display: flex;
+    // justify-content: center;
+    // // align-items: center;
+    // // min-height: 100vh;
+    background-color: #333333;
+    padding: 2rem;
+}
+
+
+
+.btn-tonal {
+    display: flex;
+    justify-self: center;
+    position: relative;
+    // display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 24px;
+    margin: 0;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    font-family: $font-family-base;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    border-radius: $border-radius-button;
+
+    background-color: $color-tonal-container;
+    color: $color-on-tonal-container;
+
+    box-shadow: none;
+    transition: box-shadow 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $color-on-tonal-container;
+        opacity: 0;
+        transition: opacity 0.2s linear;
+    }
+
+    &:hover {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+        transform: translateY(2px);
+
+        // opacity: 0.92;
+
+        &::before {
+            opacity: 0.08;
+        }
+    }
+
+    &:focus-visible {
+        outline: 2px solid $color-on-tonal-container;
+        outline-offset: 2px;
+
+        &::before {
+            opacity: 0.0;
+        }
+    }
+
+    &:active {
+        transform: scale(0.98);
+
+        &::before {
+            opacity: 0.12;
+        }
+    }
+
+    span,
+    i,
+    svg {
+        position: relative;
+        z-index: 1;
+    }
+}
